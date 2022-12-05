@@ -2,6 +2,7 @@ button {
     font-family: 'Times New Roman', Times, serif;
     font-size: 40px;
     border: 5px;
-    border-color: black;
+    border-color: skyblue;
     border-style: solid;
+    color: blue;
 }
