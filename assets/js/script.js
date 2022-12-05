@@ -1,10 +1,11 @@
 var score = localStorage.getItem("score")
 var timeEl = document.querySelector(".time")
-var secondsLeft = 60
+var questions =
 var startTimer = document.querySelector("#startTimer")
 
 function setTime() {
-    displayTime();
+    var secondsLeft = 30
+    displayTime(secondsLeft);
     var timerInterval = setInterval(function () {
         secondsLeft--;
         if (secondsLeft === 0) {
@@ -13,27 +14,26 @@ function setTime() {
         };
     })
     1000;
-}
+    
+    startTimer.addEventListener("click", displayTime);
 
-startTimer.addEventListener("click", displayTime);
-
-function takeQuiz() {
-    document.getElementById(".startTimer").addEventListener("click", displayTime)
-}
-
-function displayTime() {
+    function displayTime() {
     var label = "seconds";
     if (secondsLeft === 1) {
         label = "second"
     }
     timeEl.textContent = secondsLeft + " " + label + " left till completion."
 }
-
-function registerHighScore() {
-
 }
 
 
 
+function takeQuiz() {
+    document.getElementById(".startTimer").addEventListener("click", displayTime)
+}
 
 
+
+function registerHighScore() {
+
+}

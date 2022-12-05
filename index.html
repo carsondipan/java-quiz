@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,28 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <button>Champ Zone</button>
     <h1>Quiz of Champions</h1>
     <div class="time"></div>
-    <button id ="startTimer">Test your Mettle</button>
+    <button id="startTimer">Test your Mettle</button>
+    <section class="question" data-index="0">
+        <h2 id="next">What is your name?</h2>
+        <button data-choice="a">a. Sir Lancelot of Camelot</button>
+        <button data-choice="b">b. I am Arthur, King of the Britons</button>
+    </section>
+    <section class="question" data-index="1">
+        <h2 id="next">What is your quest?</h2>
+        <button data-choice="a">a. To seek the holy grail.</button>
+        <button data-choice="b">b. Toss some holy hand grenades or somn</button>
+    </section>
+    <section class="question" data-index="2">
+        <h2 id="next">What is your favorite color?</h2>
+        <button data-choice="a">a. Blue</button>
+        <button data-choice="b">b. Yellow... no... blueAHHHHHHHHH</button>
+    </section>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
