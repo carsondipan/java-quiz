@@ -1,39 +1,49 @@
 var score = localStorage.getItem("score")
-var timeEl = document.querySelector(".time")
-var questions =
-var startTimer = document.querySelector("#startTimer")
+var timeEl = document.querySelector("#time")
+var timeLeft = 30
+var nextEl = document.querySelector('#next');
+var cursor = 0;
+var timerEl = document.getElementById('secsLeft');
+var mainEl = document.getElementById('main');
 
-function setTime() {
-    var secondsLeft = 30
-    displayTime(secondsLeft);
-    var timerInterval = setInterval(function () {
-        secondsLeft--;
-        if (secondsLeft === 0) {
-            clearInterval(timerInterval);
-            registerHighScore()
-        };
-    })
-    1000;
-    
-    startTimer.addEventListener("click", displayTime);
-
-    function displayTime() {
+//      TIMER
+function displayTime(timeLeft) {
+    document.querySelector("#time")
     var label = "seconds";
-    if (secondsLeft === 1) {
-        label = "second"
+    if (timeLeft === 1) {
+      label = "second";
     }
-    timeEl.textContent = secondsLeft + " " + label + " left till completion."
+  }
+  function countdown() {
+    var timeLeft = 30;
+    displayTime();
+    var timeInterval = setInterval(function (displayTime) {
+      timeLeft--;
+      displayTime();
+      if (timeLeft === 0) {
+        clearInterval(timeInterval);
+        displayMessage();
+        timerEl.textContent = timeLeft + " " + label + " left until detonation of holy hand grenade.";
+      }
+    }, 1000);
 }
-}
 
 
 
-function takeQuiz() {
-    document.getElementById(".startTimer").addEventListener("click", displayTime)
-}
+//      Questions
+var displayQuestion = function () {
+
+};
+
+var advance = function() {
+  if (cursor < questions.length - 1) {
+    cursor++;
+  }
+  displayQuestion();
+};
 
 
 
-function registerHighScore() {
+displayQuestion();
 
-}
+//      High Scores

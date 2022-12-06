@@ -5,32 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Showdown of Champions</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <button>Champ Zone</button>
-    <h1>Quiz of Champions</h1>
-    <div class="time"></div>
-    <button id="startTimer">Test your Mettle</button>
-    <section class="question" data-index="0">
-        <h2 id="next">What is your name?</h2>
-        <button data-choice="a">a. Sir Lancelot of Camelot</button>
-        <button data-choice="b">b. I am Arthur, King of the Britons</button>
-    </section>
-    <section class="question" data-index="1">
-        <h2 id="next">What is your quest?</h2>
-        <button data-choice="a">a. To seek the holy grail.</button>
-        <button data-choice="b">b. Toss some holy hand grenades or somn</button>
-    </section>
-    <section class="question" data-index="2">
-        <h2 id="next">What is your favorite color?</h2>
-        <button data-choice="a">a. Blue</button>
-        <button data-choice="b">b. Yellow... no... blueAHHHHHHHHH</button>
-    </section>
-    <script src="assets/js/script.js"></script>
+    <header>
+        <h1>Quiz of Champions</h1>
+        <button id="highscore" class="score">Champ Zone</button>
+        <div id="secsLeft" class="time">60</div>
+    </header>
+    <main>
+        <section class="question" data-index="0">
+            <h2 id="next">How much wood could a woodchuck chuck?</h2>
+                <button data-choice="a">a. Sir Lancelot of Camelot.</button>
+                <button data-choice="b">b. I am Arthur, King of the Britons.</button>
+                <button data-choice="c">c. Sir Robin of Camelot</button>
+                <button data-choice="d">d. Beans</button>
+          </section>
+          <section class="question" data-index="1">
+            <h2 id="next">What is your quest?</h2>
+                <button data-choice="a">a. To seek the Holy Grail</button>
+                <button data-choice="b">b. Acquire shrubbery</button>
+          </section>
+          <section class="question" data-index="2">
+            <h2 id="next">What is your favorite color?</h2>
+                <button data-choice="a">a. Blue!</button>
+                <button data-choice="b">b. Blue!... no... YALEHAWHHHHAAAAAAAAAAAAA</button>
+          </section>
+          <section class="question" data-index="3">
+            <h2 id="next">What is the air speed velocity of an unladen swallow?</h2>
+                <button data-choice="a">a. What do you mean? African or European?</button>
+                <button data-choice="b">b. 24 mph</button>
+          </section>
+        <button id="startQuiz">Test your Mettle</button>
+        <script src="assets/js/script.js"></script>
+        <button id="nextEl"></button>
+    </main>
 </body>
 
 </html>
