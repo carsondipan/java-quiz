@@ -2,7 +2,8 @@ var question = document.querySelector('#question');
 var choices = Array.from(document.querySelectorAll('choice-text'));
 var score = document.querySelector('#score');
 var startQuiz = document.querySelector('#secsLeft')
-
+var score = 0
+var maxQuestions = 3
 var secsLeft = 30;
 time = secsLeft;
 
@@ -17,6 +18,12 @@ function countdownTimer() {
 }
 
 //      Questions
+let currentQuestion = {}
+let answers = true
+
+let questionCount = 0
+let availableQuestions = []
+
 var questions = [
     {
         question: 'What is your name?',
@@ -45,10 +52,25 @@ var questions = [
 ] 
 
 function startQuiz() {
-
+    questionCount = 0
+    score = 0
+    availableQuestions = [...questions]
+    getNewQuestion()
 }
-var score = 0
-var maxQuestions = 3
+function getNewQuestion () {
+    if(availableQuestions.length === 0 || questionsCount > totalQuestions){
+        localStorage.setItem('highScore', score)
+        return 
+    }
+
+    questionCount ++
+    progressText.innerText = `Question ${questionCount} of ${totalQuestions}`
+
+    var questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+}
+
 
 
 
