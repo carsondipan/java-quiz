@@ -1,20 +1,20 @@
 var question = document.querySelector('#question');
 var choices = Array.from(document.querySelectorAll('choice-text'));
 var score = document.querySelector('#score');
-var startQuiz = document.querySelector('#time')
+var startQuiz = document.querySelector('#secsLeft')
 
 var secsLeft = 30;
 time = secsLeft;
 
-var secsLeftEl = document.getElementById('secLeft');
+var secsLeftEl = document.getElementById('secsLeft');
 
 setInterval(countdownTimer, 1000);
 
 function countdownTimer() {
+    document.getElementById('startQuiz').addEventListener("click", countdownTimer);
     var time = Math.floor(time);
     secsLeftEl.innerHTML = `${time}`
 }
-
 
 //      Questions
 var questions = [
