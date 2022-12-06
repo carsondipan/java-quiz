@@ -7,31 +7,21 @@ var maxQuestions = 3
 var secsLeft = 30;
 time = secsLeft;
 
-var secsLeftEl = document.getElementById('secsLeft');
+var timerEl = document.getElementById('countdown');
+var mainEl = document.getElementById('main');
 
-setInterval(countdownTimer, 1000);
-
-function countdownTimer() {
-    document.getElementById('startQuiz').addEventListener("click", countdownTimer);
-    var time = Math.floor(time);
-    secsLeftEl.innerHTML = `${time}`
-}
+function displayTime(secsLeft)
 
 //      Questions
-let currentQuestion = {}
-let answers = true
 
-let questionCount = 0
-let availableQuestions = []
-
-var questions = [
+var availableQuestions = [
     {
         question: 'What is your name?',
         choice0: 'I am Arthur, King of the Britons.',
         choice1: 'My name is Sir Lancelot of Camelot.',
         choice2: 'Sir Robin of Camelot.',
         choice3: 'An Unladen Swallow (european).',
-        answer: 0,
+        answer: 2,
     },
     {
         question: 'What is your quest?',
@@ -49,21 +39,16 @@ var questions = [
         choice3: 'Orange.',
         answer: '0',
     },
-] 
+]
 
-function startQuiz() {
-    questionCount = 0
-    score = 0
-    availableQuestions = [...questions]
-    getNewQuestion()
-}
-function getNewQuestion () {
-    if(availableQuestions.length === 0 || questionsCount > totalQuestions){
+function getNewQuestion() {
+
+    if (availableQuestions.length === 0 || questionsCount > totalQuestions) {
         localStorage.setItem('highScore', score)
-        return 
+        alert, ''
     }
 
-    questionCount ++
+    questionCount++
     progressText.innerText = `Question ${questionCount} of ${totalQuestions}`
 
     var questionsIndex = Math.floor(Math.random() * availableQuestions.length)
@@ -71,18 +56,13 @@ function getNewQuestion () {
     question.innerText = currentQuestion.question
 }
 
+function startQuiz() {
+    document.getElementById('startBtn').addEventListener("click", getNewQuestion);
+    questionCount = 3
+    score = 0
+    availableQuestions = [...questions]
+    getNewQuestion()
 
-
-
-var advance = function() {
-  if (cursor < questions.length - 1) {
-    cursor++;
-  }
-  getNewQuestion();
-};
-
-
-
-
+}
 
 //      High Scores
