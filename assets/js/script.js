@@ -78,7 +78,7 @@ var advance = function() {
   if (cursor < questions.length - 1) {
     cursor++;
   }
-  displayQuestion();
+  getNewQuestion();
 };
 
 
