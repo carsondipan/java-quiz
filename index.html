@@ -17,31 +17,34 @@
         <div id="secsLeft" class="time">60</div>
     </header>
     <main>
-        <section class="question" data-index="0">
-            <h2 id="next">How much wood could a woodchuck chuck?</h2>
-                <button data-choice="a">a. Sir Lancelot of Camelot.</button>
-                <button data-choice="b">b. I am Arthur, King of the Britons.</button>
-                <button data-choice="c">c. Sir Robin of Camelot</button>
-                <button data-choice="d">d. Beans</button>
-          </section>
-          <section class="question" data-index="1">
-            <h2 id="next">What is your quest?</h2>
-                <button data-choice="a">a. To seek the Holy Grail</button>
-                <button data-choice="b">b. Acquire shrubbery</button>
-          </section>
-          <section class="question" data-index="2">
-            <h2 id="next">What is your favorite color?</h2>
-                <button data-choice="a">a. Blue!</button>
-                <button data-choice="b">b. Blue!... no... YALEHAWHHHHAAAAAAAAAAAAA</button>
-          </section>
-          <section class="question" data-index="3">
-            <h2 id="next">What is the air speed velocity of an unladen swallow?</h2>
-                <button data-choice="a">a. What do you mean? African or European?</button>
-                <button data-choice="b">b. 24 mph</button>
-          </section>
+        <div class="container">
+            <div id="start">
+                <h2>Do you believe?</h2>
+            </div>
+            <div id="Start"></div>
+        </div>
         <button id="startQuiz">Test your Mettle</button>
+        <h1 id="question">QUESTION</h1>
+        <div class="choice-container">
+            <p class="choice-prefix">A.</p>
+            <p class="choice-text" data-number="0">ANSWER</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">B.</p>
+            <p class="choice-text" data-number="1">ANSWER</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">C.</p>
+            <p class="choice-text" data-number="2">ANSWER</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">D.</p>
+            <p class="choice-text" data-number="3">ANSWER</p>
+        </div>
+        
+        
+        
         <script src="assets/js/script.js"></script>
-        <button id="nextEl"></button>
     </main>
 </body>
 
