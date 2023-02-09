@@ -10,8 +10,13 @@ time = secsLeft;
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 
-function displayTime(secsLeft)
+var startTimer = function() {
+    console.log('Timer Start');
+};
 
+var displayquestion = function () {
+    console.log('Question shows');
+};
 //      Questions
 
 var availableQuestions = [
